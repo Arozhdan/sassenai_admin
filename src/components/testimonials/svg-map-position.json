@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_testimonials_svg_map_positions",
+  "info": {
+    "displayName": "SVG Map Position"
+  },
+  "options": {},
+  "attributes": {
+    "top": {
+      "type": "integer",
+      "required": true
+    },
+    "left": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

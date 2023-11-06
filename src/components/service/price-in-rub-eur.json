@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_service_price_in_rub_eurs",
+  "info": {
+    "displayName": "Price in RUB/EUR",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rub": {
+      "type": "string"
+    },
+    "eur": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_service_bonuses",
+  "info": {
+    "displayName": "bonus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.price-in-rub-eur"
+    }
+  }
+}

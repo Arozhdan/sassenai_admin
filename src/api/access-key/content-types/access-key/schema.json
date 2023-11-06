@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "access_keys",
+  "info": {
+    "singularName": "access-key",
+    "pluralName": "access-keys",
+    "displayName": "Access Keys",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activated": {
+      "type": "boolean",
+      "default": false
+    },
+    "key": {
+      "type": "string",
+      "required": true,
+      "minLength": 6,
+      "maxLength": 6
+    }
+  }
+}

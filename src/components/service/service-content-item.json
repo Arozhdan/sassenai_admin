@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_service_service_content_items",
+  "info": {
+    "displayName": "Service Content Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

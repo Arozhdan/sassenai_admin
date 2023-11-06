@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscribtions",
+  "info": {
+    "singularName": "subscribtion",
+    "pluralName": "subscribtions",
+    "displayName": "Subscriptions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "decimal"
+    },
+    "limitAutopayments": {
+      "type": "integer"
+    },
+    "autopaymentsNum": {
+      "type": "integer"
+    },
+    "dateFirstPayment": {
+      "type": "datetime"
+    },
+    "dateLastPayment": {
+      "type": "datetime"
+    },
+    "dateNextPayment": {
+      "type": "datetime"
+    },
+    "currentAttemp": {
+      "type": "integer"
+    },
+    "paymentNum": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "actionCode": {
+      "type": "string"
+    },
+    "paymentDate": {
+      "type": "datetime"
+    },
+    "active": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "subscription"
+    },
+    "gptUsageLimit": {
+      "type": "integer",
+      "default": 5
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "suspended"
+      ],
+      "default": "active"
+    },
+    "produmusId": {
+      "type": "string"
+    },
+    "profileId": {
+      "type": "string"
+    },
+    "notificationCode": {
+      "type": "string"
+    },
+    "chatAccess": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "queries",
+  "info": {
+    "singularName": "query",
+    "pluralName": "queries",
+    "displayName": "Queries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "result": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "prompt": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::prompt.prompt"
+    },
+    "store": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "tov": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "input": {
+      "type": "text"
+    }
+  }
+}

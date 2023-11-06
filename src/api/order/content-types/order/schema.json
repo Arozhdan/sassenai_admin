@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Orders",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "orderNum": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "sum": {
+      "type": "decimal"
+    },
+    "customerEmail": {
+      "type": "email"
+    },
+    "paymentType": {
+      "type": "string"
+    },
+    "comission": {
+      "type": "decimal"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "subscription": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subscribtion.subscribtion"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "devNotes": {
+      "type": "json"
+    },
+    "attempt": {
+      "type": "integer"
+    },
+    "subscriptionDateStart": {
+      "type": "datetime"
+    },
+    "subscriptionDemoPeriod": {
+      "type": "integer"
+    },
+    "subscriptionLimitAutopayments": {
+      "type": "integer"
+    },
+    "paymentStatusDescription": {
+      "type": "string"
+    }
+  }
+}

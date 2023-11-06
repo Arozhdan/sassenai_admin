@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_global_content_images",
+  "info": {
+    "displayName": "ContentImage",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "customField",
+      "options": {
+        "output": "html"
+      },
+      "customField": "plugin::bold-title-editor.title"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

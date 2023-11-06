@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_submissions",
+  "info": {
+    "singularName": "form-submission",
+    "pluralName": "form-submissions",
+    "displayName": "Form Submissions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "phone": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "email": {
+      "pluginOptions": {},
+      "type": "email"
+    },
+    "status": {
+      "pluginOptions": {},
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "open",
+        "postponed",
+        "closed",
+        "escalated"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

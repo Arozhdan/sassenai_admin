@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_global_numbered_texts",
+  "info": {
+    "displayName": "Numbered Text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

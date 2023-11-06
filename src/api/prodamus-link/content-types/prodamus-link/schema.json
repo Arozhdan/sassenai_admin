@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prodamus_links",
+  "info": {
+    "singularName": "prodamus-link",
+    "pluralName": "prodamus-links",
+    "displayName": "Prodamus Links",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    },
+    "intro": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
