@@ -3,9 +3,7 @@
 import mime from 'mime-types';
 import fs from 'fs';
 import _ from 'lodash';
-import {
-  ApplicationError, ValidationError
-} from '@strapi/utils/lib/errors';
+import { errors } from "@strapi/utils"
 
 import utils from '@strapi/utils';
 import { validateRegisterBody } from "@strapi/plugin-users-permissions/server/controllers/validation/auth";
@@ -14,6 +12,8 @@ import {
   validateCallbackBody,
   validateEmailConfirmationBody
 } from "@strapi/plugin-users-permissions/server/controllers/validation/auth";
+
+const { ApplicationError, ValidationError } = errors
 
 const rootDir = process.cwd();
 
@@ -107,7 +107,7 @@ export default (plugin) => {
     const pluginStore = await strapi.store({ type: 'plugin', name: 'users-permissions' });
 
     const settings = await pluginStore.get({ key: 'advanced' });
-
+    //@ts-ignore
     if (!settings.allow_register) {
       throw new ApplicationError('Register action is currently disabled');
     }
@@ -133,6 +133,7 @@ export default (plugin) => {
 
     const role = await strapi
       .query('plugin::users-permissions.role')
+      //@ts-ignore
       .findOne({ where: { type: settings.default_role } });
 
     if (!role) {
@@ -162,6 +163,7 @@ export default (plugin) => {
 
     }
 
+    //@ts-ignore
     if (settings.unique_email) {
       const conflictingUserCount = await strapi.query('plugin::users-permissions.user').count({
         where: { ...identifierFilter },
@@ -180,6 +182,7 @@ export default (plugin) => {
       role: role.id,
       email: email.toLowerCase(),
       username,
+      //@ts-ignore
       confirmed: !settings.email_confirmation,
     };
 
@@ -187,6 +190,7 @@ export default (plugin) => {
 
     const sanitizedUser = await sanitizeUser(user, ctx);
 
+    //@ts-ignore
     if (settings.email_confirmation) {
       try {
         await getService('user').sendConfirmationEmail(sanitizedUser);
@@ -236,8 +240,10 @@ export default (plugin) => {
       } else {
         const settings = await strapi
           .store({ type: 'plugin', name: 'users-permissions', key: 'advanced' })
+          //@ts-ignore
           .get();
 
+        //@ts-ignore
         ctx.redirect(settings.email_confirmation_redirection || '/');
       }
     },

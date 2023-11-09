@@ -14,17 +14,18 @@ export default factories.createCoreController('api::prompt.prompt', () => ({
     const { promptId } = ctx.request.body;
     if (!promptId) return ctx.badRequest(null, 'No promptId provided');
 
-    try{
-      const userRecord = await strapi.query('plugin::users-permissions.user').findOne({ id , populate: ['favPrompts'] });
+    try {
+      //@ts-ignore
+      const userRecord = await strapi.query('plugin::users-permissions.user').findOne({ id, populate: ['favPrompts'] });
 
       const existingPrompts = userRecord.favPrompts || [];
 
       await strapi.query('plugin::users-permissions.user').update({
         where: { id },
-        data: { favPrompts: [ ...existingPrompts, promptId ] },
+        data: { favPrompts: [...existingPrompts, promptId] },
       });
       ctx.send('OK');
-    }catch(e){
+    } catch (e) {
       console.log(e);
       ctx.badRequest(null, e.message);
     }
@@ -39,15 +40,16 @@ export default factories.createCoreController('api::prompt.prompt', () => ({
     const { promptId } = ctx.request.body;
     if (!promptId) return ctx.badRequest(null, 'No promptId provided');
 
-    try{
-      const userRecord = await strapi.query('plugin::users-permissions.user').findOne({ id , populate: ['favPrompts'] });
+    try {
+      //@ts-ignore
+      const userRecord = await strapi.query('plugin::users-permissions.user').findOne({ id, populate: ['favPrompts'] });
       await strapi.query('plugin::users-permissions.user').update({
         where: { id },
         data: { favPrompts: userRecord.favPrompts.filter((p) => p.id !== promptId) },
       });
-      
+
       ctx.send('OK');
-    }catch(e){
+    } catch (e) {
       console.log(e);
       ctx.badRequest(null, e.message);
     }

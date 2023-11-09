@@ -5,10 +5,10 @@ const mapSubscribtionDataWithApi = (data: Order['subscription'], customerId: num
   let gptUsageLimit = null
   switch (data.id) {
     case '1518595':
-      gptUsageLimit = 150
+      gptUsageLimit = 200
       break
     case '1519620':
-      gptUsageLimit = 300
+      gptUsageLimit = -1
       break
     default:
       gptUsageLimit = 150
@@ -34,6 +34,7 @@ const mapSubscribtionDataWithApi = (data: Order['subscription'], customerId: num
     active: parseInt(data.active_user) === 1 && parseInt(data.active_manager) === 1 ? 'active' : 'suspended',
     gptUsageLimit,
     user: customerId,
+    chatAccess: gptUsageLimit === -1 ? true : false
 
   }
 }

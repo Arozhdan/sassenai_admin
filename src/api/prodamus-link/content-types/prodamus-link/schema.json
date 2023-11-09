@@ -23,6 +23,13 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "isPopular": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -75,7 +75,6 @@ async function chatMessageController(ctx: Context) {
     if (!user)
       return ctx.unauthorized('Вы должны войти в систему, чтобы выполнить это действие', 'Вы должны войти в систему, чтобы выполнить это действие');
     const { id, currentUsage } = user;
-    console.log('user', user);
 
 
     const subscriptionRecord = await strapi.query('api::subscribtion.subscribtion').findOne({

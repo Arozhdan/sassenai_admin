@@ -122,7 +122,7 @@ async function generateQueryController(ctx: Context) {
 
     if (status !== 'active') return ctx.badRequest(null, 'Ваша подписка не активна');
 
-    if (currentUsage >= gptUsageLimit) return ctx.badRequest(null, 'Вы превысили лимит использования');
+    if (gptUsageLimit !== -1 && currentUsage >= gptUsageLimit) return ctx.badRequest(null, 'Вы превысили лимит использования');
 
 
     const data: RequestBody = ctx.request.body;
